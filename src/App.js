@@ -6,7 +6,8 @@ function App() {
   return (
     <div className="App">
       <div className="container">
-        <h1>Deck of Cards</h1>
+        <br />
+        <h1>Deck of Cards</h1><br />
         {/* entry point of the Deck  */}
         <Deck />
       </div>
