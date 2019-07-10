@@ -8,6 +8,7 @@ export const helloHelper = () => {
 const values = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K'];
 const suits = ['♥', '♦', '♠', '♣'];
 let cards = [];
+let popped = '';
 
 // create this data structure to describe a card
 class Card {
@@ -50,4 +51,16 @@ export const shuffle = () => {
         [cards[i], cards[j]] = [cards[j], cards[i]]; // swap elements
     }
     return (cards)
+}
+
+// draw a card. GET DECK
+export const drawFromDeck = () => {
+    popped = cards.pop();
+    console.log(cards);
+    return cards
+}
+
+// draw a card. GET the popped card
+export const getPopped = () => {
+    console.log(popped);
 }
