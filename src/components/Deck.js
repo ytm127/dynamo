@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { helloHelper, makeDeck } from './helpers'
+import { helloHelper, makeDeck, shuffle } from './helpers'
 import Card from './Card';
 
 class Deck extends React.Component {
@@ -16,8 +16,7 @@ class Deck extends React.Component {
     render() {
         return (
             <div>
-                I am the Deck Component
-                <h1>{helloHelper()}</h1>
+                <button onClick={() => this.setState({ cards: shuffle() })}>SHUFFLE DECK</button>
                 <h1><Card cards={this.state.cards} /></h1>
             </div>
         );

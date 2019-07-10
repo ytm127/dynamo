@@ -41,3 +41,13 @@ export const makeDeck = () => {
     }
     return cards;
 }
+
+// shuffle deck of cards
+export const shuffle = () => {
+    // Fisher-Yates 
+    for (let i = cards.length - 1; i > 0; i--) {
+        let j = Math.floor(Math.random() * (i + 1)); // random index from 0 to i
+        [cards[i], cards[j]] = [cards[j], cards[i]]; // swap elements
+    }
+    return (cards)
+}
