@@ -21,7 +21,7 @@ class Deck extends React.Component {
                 {this.state.cards.length == 0 ?
                     <div>
                         <h3>No more cards!</h3>
-                        <button onClick={() => this.setState({ cards: shuffle() })}>Start Over</button>
+                        <button onClick={() => this.setState({ cards: shuffle() })}>START OVER</button>
                     </div>
 
                     :

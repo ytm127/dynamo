@@ -43,7 +43,7 @@ export const makeDeck = () => {
     return cards;
 }
 
-// shuffle deck of cards
+// shuffle deck of cards and restart if deck if empty
 export const shuffle = () => {
     if (cards.length != 0) {
         // Fisher-Yates 
