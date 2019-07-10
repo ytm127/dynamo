@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { helloHelper, makeDeck, shuffle, drawFromDeck, getPopped } from './helpers'
 import Card from './Card';
+import DrawnCard from './DrawnCard';
 
 class Deck extends React.Component {
 
@@ -16,9 +17,17 @@ class Deck extends React.Component {
     render() {
         return (
             <div>
-                <button onClick={() => this.setState({ cards: shuffle() })}>SHUFFLE DECK</button>
-                <button onClick={() => { this.setState({ cards: drawFromDeck() }) }}>DRAW A CARD</button>
-                {/* <h3>{getPopped()}</h3> */}
+
+                {this.state.cards.length == 0 ?
+                    <h3>No more cards!</h3>
+                    :
+                    <div>
+                        <button onClick={() => this.setState({ cards: shuffle() })}>SHUFFLE DECK</button>
+                        <button onClick={() => { this.setState({ cards: drawFromDeck() }) }}>DRAW A CARD</button>
+                    </div>
+
+                }
+                <DrawnCard drawnCard={getPopped()} />
                 <h1><Card cards={this.state.cards} /></h1>
             </div>
         );

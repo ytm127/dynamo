@@ -45,22 +45,34 @@ export const makeDeck = () => {
 
 // shuffle deck of cards
 export const shuffle = () => {
-    // Fisher-Yates 
-    for (let i = cards.length - 1; i > 0; i--) {
-        let j = Math.floor(Math.random() * (i + 1)); // random index from 0 to i
-        [cards[i], cards[j]] = [cards[j], cards[i]]; // swap elements
+    if (cards.length != 0) {
+        // Fisher-Yates 
+        for (let i = cards.length - 1; i > 0; i--) {
+            let j = Math.floor(Math.random() * (i + 1)); // random index from 0 to i
+            [cards[i], cards[j]] = [cards[j], cards[i]]; // swap elements
+        }
+        return (cards)
     }
-    return (cards)
+    else {
+        makeDeck()
+    }
 }
 
 // draw a card. GET DECK
 export const drawFromDeck = () => {
-    popped = cards.pop();
-    console.log(cards);
-    return cards
+    if (cards.length != 0) {
+        popped = cards.pop();
+        console.log(cards);
+        return cards
+    }
+    else {
+        console.log('No more cards to draw!')
+    }
+
 }
 
 // draw a card. GET the popped card
 export const getPopped = () => {
     console.log(popped);
+    return popped;
 }
