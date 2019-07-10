@@ -4,8 +4,10 @@ class Card extends React.Component {
     render() {
         return (
             <div>
-                I am the card component
-         </div>
+                {this.props.cards.map((card) => (
+                    <h6>{card.value} {card.suit} {card.color}</h6>
+                ))}
+            </div>
         );
     }
 

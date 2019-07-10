@@ -18,7 +18,7 @@ class Deck extends React.Component {
             <div>
                 I am the Deck Component
                 <h1>{helloHelper()}</h1>
-                <h1><Card /></h1>
+                <h1><Card cards={this.state.cards} /></h1>
             </div>
         );
     }
