@@ -54,7 +54,7 @@ export const shuffle = () => {
         return (cards)
     }
     else {
-        makeDeck()
+        return makeDeck()
     }
 }
 
