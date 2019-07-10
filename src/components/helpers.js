@@ -45,12 +45,14 @@ export const makeDeck = () => {
 
 // shuffle deck of cards and restart if deck if empty
 export const shuffle = () => {
+    let cards2 = cards;
     if (cards.length != 0) {
         // Fisher-Yates 
         for (let i = cards.length - 1; i > 0; i--) {
             let j = Math.floor(Math.random() * (i + 1)); // random index from 0 to i
             [cards[i], cards[j]] = [cards[j], cards[i]]; // swap elements
         }
+        testShuffle(cards2, cards);
         return (cards)
     }
     else {
@@ -76,3 +78,14 @@ export const getPopped = () => {
     console.log(popped);
     return popped;
 }
+
+// TESTS
+const testShuffle = (cards2, cards) => {
+    if (cards2 != cards) {
+        alert("Shuffle did NOT work");
+    }
+    else {
+        console.log("Shuffle worked!")
+    }
+}
+
