@@ -76,6 +76,7 @@ export const drawFromDeck = () => {
 // draw a card. GET the popped card
 export const getPopped = () => {
     console.log(popped);
+    testDraw(popped);
     return popped;
 }
 
@@ -86,6 +87,17 @@ const testShuffle = (cards2, cards) => {
     }
     else {
         console.log("Shuffle worked!")
+    }
+}
+
+// weird logic here... Would love to learn a better way 
+const testDraw = (drawnCard) => {
+    if (drawnCard.value === undefined || drawnCard.suit === undefined || drawnCard.color === undefined || drawFromDeck.key === undefined) {
+        console.log("Draw function worked!")
+    }
+    else {
+        alert("Draw function did NOT work")
+
     }
 }
 
